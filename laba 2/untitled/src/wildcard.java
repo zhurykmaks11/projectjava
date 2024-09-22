@@ -3,7 +3,6 @@ import java.util.ArrayList;
 
 public class wildcard {
 
-    // Метод, що приймає список з lower-bounded wildcard і додає до нього числа від 1 до 10
     public static void addToList(List<? super Integer> list) {
         for (int i = 1; i <= 10; i++) {
             list.add(i);  // Додаємо числа від 1 до 10

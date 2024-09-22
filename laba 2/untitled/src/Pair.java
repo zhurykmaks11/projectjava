@@ -1,7 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Pair<T1, T2> {
+public class Pair<T1, T2 > implements Comparable <Pair<T1,T2>>
+{
     private T1 first; // Перший елемент пари
     private T2 second; // Другий елемент пари
 
@@ -10,37 +11,29 @@ public class Pair<T1, T2> {
         this.first = first;
         this.second = second;
     }
-
-    // Геттери для доступу до елементів
+    //доступи до гет
     public T1 getFirst() {
         return first;
     }
-
     public T2 getSecond() {
         return second;
     }
-
-    // Сеттер для зміни першого елемента
+    // Сеттер для зміни
     public void setFirst(T1 first) {
         this.first = first;
     }
-
-    // Сеттер для зміни другого елемента
     public void setSecond(T2 second) {
         this.second = second;
     }
-
     // Метод порівняння двох пар
-    public static <T1, T2> boolean compare(Pair<T1, T2> pair1, Pair<T1, T2> pair2) {
-        return pair1.getFirst().equals(pair2.getFirst()) && pair1.getSecond().equals(pair2.getSecond());
+    public static <T1 extends Comparable, T2> boolean compare(Pair<T1, T2> pair1, Pair<T1, T2> pair2) {
+        T2 second1 = pair2.getSecond();
+        return compare(pair1) && compare(Pair<T1, T2> pair2);
     }
 
     @Override
     public String toString() {
-        return "Pair{" +
-                "first=" + first +
-                ", second=" + second +
-                '}';
+        return "Pair{" + "first=" + first + ", second=" + second + '}';
     }
 
     public static void main(String[] args) {
@@ -59,5 +52,10 @@ public class Pair<T1, T2> {
 
         // Виведення пари
         System.out.println(pair3);
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return first.compareTo(o);
     }
 }

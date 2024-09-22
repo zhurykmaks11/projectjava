@@ -1,16 +1,14 @@
-// Загальний клас з методом findMax
 public class Generic {
 
-    // Загальний метод findMax для пошуку максимального елемента в масиві
+    // для пошуку максимального елемента в масиві
     public static <T extends Comparable<T>> T findMax(T[] array) {
         if (array == null || array.length == 0) {
             throw new IllegalArgumentException("Масив не може бути порожнім");
         }
-
-        T max = array[0]; // Припускаємо, що перший елемент - максимальний
+        T max = array[0];
         for (T element : array) {
             if (element.compareTo(max) > 0) {
-                max = element; // Оновлюємо максимальний елемент
+                max = element; // Оновлюємо
             }
         }
         return max;

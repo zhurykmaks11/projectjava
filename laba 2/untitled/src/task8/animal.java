@@ -3,7 +3,6 @@ package task8;
 import java.util.ArrayList;
 import java.util.List;
 
-// Абстрактний клас Animal з методом makeSound()
 abstract class Animal {
     public abstract void makeSound();
 }
@@ -55,11 +54,11 @@ class AnimalShelter {
 
     // Метод для друку звуків усіх тварин
     public void printAnimalSounds() {
-        System.out.println("Sounds from all dogs:");
+        System.out.println("all dogs:");
         for (Dog dog : dogs) {
             dog.makeSound();
         }
-        System.out.println("Sounds from other animals:");
+        System.out.println("other animals:");
         for (Animal animal : otherAnimals) {
             animal.makeSound();
         }
@@ -67,7 +66,7 @@ class AnimalShelter {
 }
 
 // Демонстрація роботи
-class AnimalShelterDemo {
+class AnimalShelD {
     public static void main(String[] args) {
         AnimalShelter shelter = new AnimalShelter();
 
@@ -78,8 +77,8 @@ class AnimalShelterDemo {
 
         // Додаємо тварин до притулку
         shelter.addDog(dog);
-        shelter.addDog(labrador); // Додаємо підклас Labrador
-        shelter.addOtherAnimal(cat); // Додаємо іншу тварину, кішку
+        shelter.addDog(labrador);
+        shelter.addOtherAnimal(cat);
 
         // Виводимо звуки усіх тварин
         shelter.printAnimalSounds();

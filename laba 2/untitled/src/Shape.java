@@ -2,27 +2,21 @@ import java.util.List;
 
 // Абстрактний клас Shape
 abstract class Shape {
-    // Абстрактний метод для обчислення площі
     public abstract double getArea();
 }
-
-// Підклас Circle, що успадковує клас Shape
 class Circle extends Shape {
     private double radius;
 
-    // Конструктор для ініціалізації радіуса
     public Circle(double radius) {
         this.radius = radius;
     }
 
-    // Реалізація методу getArea() для кола
     @Override
     public double getArea() {
         return Math.PI * radius * radius;
     }
 }
 
-// Підклас Rectangle, що успадковує клас Shape
 class Rectangle extends Shape {
     private double width;
     private double height;
@@ -42,8 +36,6 @@ class Rectangle extends Shape {
 
 class ShapeCalculator {
 
-    // Метод для обчислення загальної площі форм у списку
-    // Використовується Upper-bounded wildcard (<? extends Shape>)
     public static double calculateTotalArea(List<? extends Shape> shapes) {
         double totalArea = 0;
         for (Shape shape : shapes) {

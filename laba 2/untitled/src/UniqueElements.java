@@ -11,23 +11,21 @@ public class UniqueElements {
     public static <T> Map<T, Integer> countOccurrences(List<T> list) {
         Map<T, Integer> occurrencesMap = new HashMap<>();  // Створюємо Map для збереження елементів і їх кількості
 
-        // Проходимо по кожному елементу в списку
+        // Проходимо по списку
         for (T element : list) {
-            // Збільшуємо лічильник для кожного елемента, якщо він вже є в Map
             occurrencesMap.put(element, occurrencesMap.getOrDefault(element, 0) + 1);
         }
 
-        return occurrencesMap;  // Повертаємо Map з кількістю входжень
+        return occurrencesMap;
     }
 
     public static void main(String[] args) {
-        // Приклад списку об'єктів
         List<String> items = Arrays.asList("apple", "banana", "apple", "orange", "banana", "apple");
 
-        // Отримання унікальних елементів
+        // унікальні елементи
         Set<String> uniqueElements = getUniqueElements(items);
         System.out.println("Унікальні елементи: " + uniqueElements);
-        // Підрахунок кількості входжень
+        // Підрахунок
         Map<String, Integer> occurrences = countOccurrences(items);
         System.out.println("Кількість входжень кожного елемента: " + occurrences);
     }
