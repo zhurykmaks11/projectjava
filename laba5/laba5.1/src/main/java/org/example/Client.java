@@ -13,7 +13,10 @@ public class Client {
         this.fullName = fullName;
         this.birthDate = birthDate;
         this.phoneNumber = phoneNumber;
+
     }
+
+
 
     public int getId() {
         return id;

@@ -70,3 +70,19 @@ public class CarDAO {
         }
     }
 }
+
+// Метод для вставки машини в базу даних
+    public static void insertAuto(Connection connection, Car auto) throws SQLException {
+        String sql = "INSERT INTO car (make, model, year, fuel_type, body_type, color, license_plate, passenger_capacity) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+           preparedStatement.setString(1, auto.getMake());
+            preparedStatement.setString(2, auto.getModel());
+            preparedStatement.setInt(3, auto.getYear());
+            preparedStatement.setString(4, auto.getFuelType());
+            preparedStatement.setString(5, auto.getBodyType());
+            preparedStatement.setString(6, auto.getColor());
+            preparedStatement.setString(7, auto.getLicensePlate());
+            preparedStatement.setInt(8, auto.getPassengerCapacity());
+            preparedStatement.executeUpdate();
+        }
+    }

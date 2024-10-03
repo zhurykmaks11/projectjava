@@ -21,6 +21,7 @@ public class ClientDAO {
                         resultSet.getString("full_name"),
                         resultSet.getDate("birth_date").toLocalDate(),
                         resultSet.getString("phone_number"));
+
                 clients.add(client);
             }
         }
